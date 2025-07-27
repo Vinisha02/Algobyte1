@@ -1,6 +1,7 @@
 import Header, { HeaderPhone } from "./components/Header";
 import Home from "./components/Home";
 import Work from "./components/Work";
+import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
@@ -32,6 +33,7 @@ function App() {
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Home ratio={ratio} />
       <Services />
+      <About />
       <Work />
       <Timeline />
       <Testimonial />
