@@ -7,10 +7,11 @@
 @import "work";
 @import "timeline";
 @import "services";
-@import "testimonial";
+@import "Teams";
 @import "contact";
 @import "footer";
 @import "mediaquery";
+@import "teamdetail";
 
 * {
   margin: 0%;
@@ -24,7 +25,7 @@ a {
 }
 
 body {
-  background-color: $color1;
+  background-color: white;
   overflow-x: hidden;
 }
 

@@ -6,29 +6,21 @@ const Timeline = () => {
     <div id="timeline">
       <div className="timelineBox">
         {data.projects.map((item, index) => (
-          <TimelineItem
-            heading={item.title}
-            text={item.date}
-            index={index}
+          <div
             key={item.title}
-          />
+            className={`timelineItem ${
+              index % 2 === 0 ? "leftTimeline" : "rightTimeline"
+            }`}
+          >
+            <div>
+              <h2>{item.title}</h2>
+              <p>{item.date}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
-
-const TimelineItem = ({ heading, text, index }) => (
-  <div
-    className={`timelineItem ${
-      index % 2 === 0 ? "leftTimeline" : "rightTimeline"
-    }`}
-  >
-    <div>
-      <h2>{heading}</h2>
-      <p>{text}</p>
-    </div>
-  </div>
-);
 
 export default Timeline;
