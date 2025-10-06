@@ -1,26 +1,10 @@
-import React, { useRef } from "react";
-import { animate, motion } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
 import me from "../assets/image.png";
 
-const Home = ({ ratio }) => {
-  const clientCount = useRef(null);
-  const projectCount = useRef(null);
-
-  const animationClientsCount = () => {
-    animate(0, 1000, {
-      duration: 1,
-      onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
-    });
-  };
-  const animationProjectsCount = () => {
-    animate(0, 15, {
-      duration: 1,
-      onUpdate: (v) => (projectCount.current.textContent = v.toFixed()),
-    });
-  };
-
+const Home = () => {
   const animations = {
     h1: {
       initial: {
@@ -43,12 +27,14 @@ const Home = ({ ratio }) => {
       },
     },
   };
+
   return (
     <div id="home">
       <section>
         <div>
           <motion.h1 {...animations.h1}>
-           Bringing the saga of<br /> Technofilic nerds! 
+            Bringing the saga of
+            <br /> Technofilic nerds!
           </motion.h1>
 
           <Typewriter
@@ -67,46 +53,13 @@ const Home = ({ ratio }) => {
               About us <BsArrowUpRight />
             </a>
           </div>
-
-          <article>
-            <p>
-              +
-              {ratio < 2 && (
-                <motion.span
-                  whileInView={animationClientsCount}
-                  ref={clientCount}
-                ></motion.span>
-              )}
-            </p>
-            <span>Members</span>
-          </article>
-
-          <aside>
-            <article>
-              <p>
-                +
-                {ratio < 2 && (
-                  <motion.span
-                    ref={projectCount}
-                    whileInView={animationProjectsCount}
-                  >
-                    13+
-                  </motion.span>
-                )}
-              </p>
-              <span>Events</span>
-            </article>
-
-            <article data-special>
-              <p>Contact</p>
-              <span>algobyte@banasthali.in</span>
-            </article>
-          </aside>
         </div>
       </section>
+
       <section>
         <img src={me} alt="Algobyte" />
       </section>
+
       <BsChevronDown />
     </div>
   );

@@ -3,8 +3,8 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDYAW9F1kP29j38dfZuZxK4lppUkSLD25c",
-  authDomain: "react-portfolio-abhishek.firebaseapp.com",
-  projectId: "react-portfolio-abhishek",
+  authDomain: "react-portfolio-vinisha.firebaseapp.com",
+  projectId: "react-portfolio-vinisha",
   storageBucket: "react-portfolio-abhishek.appspot.com",
   messagingSenderId: "278164302078",
   appId: "1:278164302078:web:797fe5960bb12b5fca1daf",
