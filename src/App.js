@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Work from "./components/Work";
+import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Services from "./components/Services";
 import Teams from "./components/Teams";

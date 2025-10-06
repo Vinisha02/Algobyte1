@@ -49,7 +49,7 @@ const Home = () => {
 
           <div>
             <a href="mailto:algobyte@banasthali.in">Connect</a>
-            <a href="#work">
+            <a href="#About">
               About us <BsArrowUpRight />
             </a>
           </div>
