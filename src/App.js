@@ -1,45 +1,48 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header, { HeaderPhone } from "./components/Header";
 import Home from "./components/Home";
 import Work from "./components/Work";
 import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Services from "./components/Services";
-import Teams from "./components/Teams";
+import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import TeamDetail from "./components/TeamDetail";
-import CodeRush from "./components/CodeRush";
 import { Toaster } from "react-hot-toast";
-
-import Header, { HeaderPhone } from "./components/Header";
+import { useEffect, useState } from "react";
+import GlobalStyle from './global.scss';
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false); // Manage menu state
+  <GlobalStyle /> 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
+  useEffect(() => {
+    const resizeRatio = () => {
+      setRatio(window.innerWidth / window.innerHeight);
+    };
 
-  return (
-    <Router>
-      <>
-        <Header setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
-        <HeaderPhone setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Home />
-              <Services />
-              <Work />
-              <Timeline />
-              <Teams />
-              <Contact />
-              <Footer />
-              <Toaster />
-              <CodeRush/>
-            </>
-          } />
-          <Route path="/team-details" element={<TeamDetail />} />
-        </Routes>
-      </>
-    </Router>
+    window.addEventListener("resize", resizeRatio);
+
+    return () => {
+      window.removeEventListener("resize", resizeRatio);
+    };
+  }, [ratio]);
+
+  return ratio < 2 ? (
+    <>
+      <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Home ratio={ratio} />
+      <Services />
+      <About />
+      <Work />
+      <Timeline />
+      <Testimonial />
+      <Contact />
+      <Footer />
+      <Toaster />
+    </>
+  ) : (
+    <em id="customMessage">Please Change the ratio to View!</em>
   );
 }
 

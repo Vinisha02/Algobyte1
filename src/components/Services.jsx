@@ -53,7 +53,7 @@ const Services = () => {
           }}
         >
           <AiFillAndroid />
-          <span>Internship</span>
+          <span>Placememnt/Internship</span>
         </motion.div>
         <motion.div
           className="serviceBox4"
@@ -61,7 +61,7 @@ const Services = () => {
           initial={animations.four}
         >
           <AiFillWindows />
-          <span>Placememnt Guide</span>
+          <span>Chat Rooms</span>
         </motion.div>
       </section>
     </div>

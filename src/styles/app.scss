@@ -8,11 +8,10 @@
 @import "about";
 @import "timeline";
 @import "services";
-@import "Teams";
+@import "testimonial";
 @import "contact";
 @import "footer";
 @import "mediaquery";
-@import "teamdetail";
 
 * {
   margin: 0%;
@@ -26,7 +25,7 @@ a {
 }
 
 body {
-  background-color: white;
+  background-color: $color1;
   overflow-x: hidden;
 }
 
