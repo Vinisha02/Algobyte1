@@ -1,0 +1,46 @@
+#about {
+  padding: 8rem;
+  width: 100%;
+  padding: 4rem 13.33vmax;
+  margin: auto;
+  border-radius: 16px;
+  >h2 {
+    font: 700 2.5rem "Open Sans", sans-serif;
+    text-align: center;
+    width: fit-content;
+    border-bottom: 1px solid #16161698;
+    padding: 0.5rem;
+    margin: 14px auto;
+}
+
+  section {
+    margin: 64px;
+    background: #292b46;
+    width: 700px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    article {
+      >h3 {
+        font: 700 1.7rem ;
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        color: #fef2f2;
+      }
+      p, ul {
+        font: 14.14px;
+        line-height: 1.6;
+        color: #fef2f2;
+        font-family: "Open Sans", sans-serif
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        list-style: disc;
+      }
+    }
+  }
+} 
+  
